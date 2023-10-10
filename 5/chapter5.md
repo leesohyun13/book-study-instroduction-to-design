@@ -33,3 +33,19 @@
 
 ## 4. 결과를 리천하는 데 매개변수 사용하지 않기 
 
+
+## 번외
+### 언제, 왜 kotlin에서 extension을 사용할까? 
+- `inline function`
+```
+inline fun <reified T, reified U> ObjectMapper.addMixIn(): ObjectMapper = this.addMixIn(T::class.java, U::class.java)
+``` 
+- Operator overloading﻿ like `*`, `+`
+```
+class OrdersList: IndexedContainer {
+    override fun get(index: Int) { /*...*/ }
+}
+```
+- iterator() extension method
+- 특정 스코프 or Context에서 계산 로직을 만들고 싶은 경우 
+</br>
